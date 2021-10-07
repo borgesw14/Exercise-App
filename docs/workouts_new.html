@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Workout | FitLife</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="https://kit.fontawesome.com/58942683a9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/src/styles/styles.css">
+</head>
+
+<body>
+    <!-- Nav -->
+    <div class="container">
+        <nav class="navbar has-shadow is-white px-6">
+            <div class="navbar-brand">
+                <a href="/index.html" class="navbar-item is-size-4 ">FitLife</a>
+                <a class="navbar-burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </div>
+            <div class="navbar-menu">
+                <div class="navbar-start">
+                    <a href="/dashboard.html" class="navbar-item">Dashboard</a>
+
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a href="#" class="navbar-link">Workouts</a>
+
+                        <div class="navbar-dropdown">
+                            <a href="/workouts_history.html" class="navbar-item">History</a>
+                            <a href="/workouts_new.html" class="navbar-item">New Workout</a>
+                        </div>
+                    </div>
+
+                    <a href="/friends.html" class="navbar-item">Friends</a>
+                </div>
+                <div class="navbar-end">
+
+                    <div class="navbar-item">
+                        <input type="text" class="input is-dark is-rounded" placeholder="Search">
+                    </div>
+
+                    <div class="navbar-item">
+                        <span class="icon">
+                            <a class="button is-white"><i class="fa fa-facebook"></i></a>
+                        </span>
+                    </div>
+                    <div class="navbar-item">
+                        <span class="icon">
+                            <a class="button is-white"><i class="fa fa-youtube"></i></a>
+                        </span>
+                    </div>
+                    <div class="navbar-item">
+                        <span class="icon">
+                            <a class="button is-white"><i class="fa fa-instagram"></i></a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- New Workout form -->
+    <div class="section">
+        <div class="container">
+            <div class="field">
+                <label class="label">Title</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Workout Title">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Location</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Workout Title">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Time</label>
+                <div class="control">
+                    <input class="input" type="time" placeholder="Workout Title">
+                </div>
+            </div>
+
+
+            <div class="field">
+                <label class="label">Type</label>
+                <div class="control">
+                    <div class="select">
+                        <select>
+                            <option>Cardio</option>
+                            <option>Strength</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Description</label>
+                <div class="control">
+                    <textarea class="textarea"></textarea>
+                </div>
+            </div>
+
+            <div class="field file is-boxed">
+                <label class="file-label">
+                    <input class="file-input" type="file" name="resume">
+                    <span class="file-cta">
+                        <span class="file-icon">
+                            <i class="fas fa-upload"></i>
+                        </span>
+                        <span class="file-label">
+                            Upload Photo
+                        </span>
+                    </span>
+                </label>
+            </div>
+
+            <div class="field is-grouped">
+                <div class="control">
+                    <button class="button is-link">Submit</button>
+                </div>
+                <div class="control">
+                    <button class="button is-link is-light">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
