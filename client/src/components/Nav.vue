@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-        <nav class="navbar has-shadow is-white px-6">
+        <nav class="navbar has-shadow is-white px-6 is-fixed-top">
             <div class="navbar-brand">
                 <a href="/" class="navbar-item is-size-4 ">FitLife</a>
                 <a class="navbar-burger">

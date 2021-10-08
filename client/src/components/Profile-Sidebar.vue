@@ -44,19 +44,7 @@
                         
                     </div>
                     <p class="heading">Latest Activity</p>
-                    <div class="level is-mobile">
-                        <div class="level-left">
-                            <div class="level-item">
-                                <p>Morning Workout</p>
-                            </div>
-                        </div>
-
-                        <div class="level-right">
-                            <div class="level-item">
-                                <time datetime="2021-10-1">1 Oct 2021</time>
-                            </div>
-                        </div>
-                    </div>
+                    <p>Morning Workout - <time datetime="2021-10-1">1 Oct 2021</time></p>
                 </div>
             </div>
         </div>
