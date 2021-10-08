@@ -2,7 +2,7 @@
   <div class="container">
         <nav class="navbar has-shadow is-white px-6">
             <div class="navbar-brand">
-                <a href="/index.html" class="navbar-item is-size-4 ">FitLife</a>
+                <a href="/" class="navbar-item is-size-4 ">FitLife</a>
                 <a class="navbar-burger">
                     <span></span>
                     <span></span>
@@ -11,18 +11,18 @@
             </div>
             <div class="navbar-menu">
                 <div class="navbar-start">
-                    <a href="/dashboard.html" class="navbar-item">Dashboard</a>
+                    <a href="/dashboard" class="navbar-item">Dashboard</a>
 
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a href="#" class="navbar-link">Workouts</a>
 
                         <div class="navbar-dropdown">
-                            <a href="/workouts_history.html" class="navbar-item">History</a>
-                            <a href="/workouts_new.html" class="navbar-item">New Workout</a>
+                            <a href="/workouts_history" class="navbar-item">History</a>
+                            <a href="/workouts_new" class="navbar-item">New Workout</a>
                         </div>
                     </div>
 
-                    <a href="/friends.html" class="navbar-item">Friends</a>
+                    <a href="/friends" class="navbar-item">Friends</a>
                 </div>
                 <div class="navbar-end">
 
