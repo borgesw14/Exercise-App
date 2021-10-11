@@ -1,13 +1,11 @@
 
-const express = require('express')
+const express = require('express');
+const serveStatic = require('serve-static');
 const path = require('path');
 const app = express()
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 
-app.use(express.static(path.join(__dirname, 'client')));
-//app.use(express.static(path.join(__dirname, 'assets')));
-//app.use(express.static(path.join(__dirname, 'scripts')));
-//app.use(express.static(path.join(__dirname, 'styles')));
+app.use(serveStatic(path.join(__dirname, 'docs')));
 
 app.listen(PORT, () => {
   console.log(`Example app listening at http://localhost:${PORT}`)

@@ -1,6 +1,8 @@
 <template>
+<div>
   <Nav />
   <router-view />
+</div>
 </template>
 
 <script>
@@ -9,10 +11,15 @@
   export default {
     components: {
       Nav
+    },
+    data() {
+    return {
+      image: require('@/assets/equipment.jpg')
     }
+  }
   }
 </script>
 
-<style lang="scss">
+<style>
 
 </style>

@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server/app",
+    "postinstall": "npm run build",
+    "start": "node server/app.js",
     "dev": "nodemon server/app"
   },
   "repository": {
@@ -21,5 +22,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "nodemon": "^2.0.13"
+  },
+  "devDependencies": {
+    "serve-static": "^1.14.1"
   }
 }

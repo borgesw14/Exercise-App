@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <section id="header-hero" class="hero  is-halfheight is-light ">
+        <section id="header-hero" class="hero  is-halfheight is-light hero-header">
             <div class="hero-body">
                 <div class="container has-text-left ">
     
@@ -24,13 +24,17 @@
 
 <script>
 export default {
-    
+    data() {
+    return {
+      image: require('../assets/equipment.jpg')
+    }
+  }
 }
 </script>
 
 <style scoped>
-    header-hero {
-        background: '@/assets/equipment.jpeg';
+    .header-hero {
+        background: "image";
     }
 </style>
 
