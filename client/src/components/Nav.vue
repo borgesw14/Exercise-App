@@ -3,7 +3,7 @@
     <nav class="navbar has-shadow is-white px-6 is-fixed-top">
       <!-- <nav class="navbar has-shadow is-white px-6"> -->
       <div class="navbar-brand">
-        <a href="/" class="navbar-item is-size-4">FitLife</a>
+        <router-link to="/" class="navbar-item is-size-4">FitLife</router-link>
         <a
           class="navbar-burger"
           @click="toggleIsActive"
@@ -16,14 +16,14 @@
       </div>
       <div class="navbar-menu" :class="{ 'is-active': showNav }">
         <div class="navbar-start">
-          <a href="/dashboard" class="navbar-item">Dashboard</a>
+          <router-link to="/dashboard" class="navbar-item">Dashboard</router-link>
 
           <div class="navbar-item has-dropdown is-hoverable">
             <a href="#" class="navbar-link">Workouts</a>
 
             <div class="navbar-dropdown">
-              <a href="/workouts_history" class="navbar-item">History</a>
-              <a href="/workouts_new" class="navbar-item">New Workout</a>
+              <router-link to="/workouts_history" class="navbar-item">History</router-link>
+              <router-link to="/workouts_new" class="navbar-item">New Workout</router-link>
             </div>
           </div>
 
