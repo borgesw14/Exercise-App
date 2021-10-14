@@ -10,18 +10,18 @@
     <!--  Pricing tabs-->
     <div class="tabs is-boxed is-fullwidth">
       <ul>
-        <li class="is-active" data-target="basic-content">
-          <a>
+        <li :class="{ 'is-active': basicActive }">
+          <a @click="toggleBasic">
             <span>Basic</span>
           </a>
         </li>
-        <li data-target="premium-content">
-          <a>
+        <li :class="{ 'is-active': premiumActive }">
+          <a @click="togglePremium">
             <span>Premium</span>
           </a>
         </li>
-        <li data-target="super-content">
-          <a>
+        <li :class="{ 'is-active': superActive }">
+          <a @click="toggleSuper">
             <span>Super</span>
           </a>
         </li>
@@ -29,7 +29,7 @@
     </div>
 
     <div id="tab-content">
-      <div id="basic-content">
+      <div :class="{ 'is-hidden': !basicActive }">
         <div class="content">
           <h3 class="title is-size-3">Basic Plan</h3>
           <p>
@@ -51,7 +51,7 @@
           </div>
         </div>
       </div>
-      <div id="premium-content" class="is-hidden">
+      <div :class="{ 'is-hidden': !premiumActive }">
         <div class="content">
           <h3 class="title is-size-3">Premium Plan</h3>
           <p>
@@ -73,7 +73,7 @@
           </div>
         </div>
       </div>
-      <div id="super-content" class="is-hidden">
+      <div :class="{ 'is-hidden': !superActive }">
         <div class="content">
           <h3 class="title is-size-3">Super Plan</h3>
           <p>
@@ -100,5 +100,30 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      basicActive: true,
+      premiumActive: false,
+      superActive: false,
+    };
+  },
+  methods: {
+    toggleBasic() {
+      this.basicActive = true;
+      this.premiumActive = false;
+      this.superActive = false;
+    },
+    togglePremium() {
+      this.basicActive = false;
+      this.premiumActive = true;
+      this.superActive = false;
+    },
+    toggleSuper() {
+      this.basicActive = false;
+      this.premiumActive = false;
+      this.superActive = true;
+    },
+  },
+};
 </script>
