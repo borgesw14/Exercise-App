@@ -1,3 +1,6 @@
 #header-hero {
   background: url("../img/girl-dumbell.png") center center no-repeat fixed;
 }
+#nav-container {
+  padding-bottom: 20px;
+}

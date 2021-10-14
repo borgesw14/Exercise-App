@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div id="nav-container" class="container">
     <nav class="navbar has-shadow is-white px-6 is-fixed-top">
       <!-- <nav class="navbar has-shadow is-white px-6"> -->
       <div class="navbar-brand">
