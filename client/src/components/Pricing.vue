@@ -10,18 +10,18 @@
     <!--  Pricing tabs-->
     <div class="tabs is-boxed is-fullwidth">
       <ul>
-        <li :class="{ 'is-active': basicActive }">
-          <a @click="toggleBasic">
+        <li :class="{ 'is-active': active == tabIds.BASIC }">
+          <a @click="active = tabIds.BASIC">
             <span>Basic</span>
           </a>
         </li>
-        <li :class="{ 'is-active': premiumActive }">
-          <a @click="togglePremium">
+        <li :class="{ 'is-active': active == tabIds.PREMIUM }">
+          <a @click="active = tabIds.PREMIUM">
             <span>Premium</span>
           </a>
         </li>
-        <li :class="{ 'is-active': superActive }">
-          <a @click="toggleSuper">
+        <li :class="{ 'is-active': active == tabIds.SUPER }">
+          <a @click="active = tabIds.SUPER">
             <span>Super</span>
           </a>
         </li>
@@ -29,7 +29,7 @@
     </div>
 
     <div id="tab-content">
-      <div :class="{ 'is-hidden': !basicActive }">
+      <div :class="{ 'is-hidden': active != tabIds.BASIC }">
         <div class="content">
           <h3 class="title is-size-3">Basic Plan</h3>
           <p>
@@ -51,7 +51,7 @@
           </div>
         </div>
       </div>
-      <div :class="{ 'is-hidden': !premiumActive }">
+      <div :class="{ 'is-hidden': active == 2 }">
         <div class="content">
           <h3 class="title is-size-3">Premium Plan</h3>
           <p>
@@ -73,7 +73,7 @@
           </div>
         </div>
       </div>
-      <div :class="{ 'is-hidden': !superActive }">
+      <div :class="{ 'is-hidden': active == tabIds.SUEPR }">
         <div class="content">
           <h3 class="title is-size-3">Super Plan</h3>
           <p>
@@ -100,30 +100,15 @@
 </template>
 
 <script>
+const tabIds ={ BASIC : 1, PREMIUM : 2, SUPER : 3} ;
 export default {
   data() {
     return {
-      basicActive: true,
-      premiumActive: false,
-      superActive: false,
+      tabIds,
+      active: 1,
     };
   },
   methods: {
-    toggleBasic() {
-      this.basicActive = true;
-      this.premiumActive = false;
-      this.superActive = false;
-    },
-    togglePremium() {
-      this.basicActive = false;
-      this.premiumActive = true;
-      this.superActive = false;
-    },
-    toggleSuper() {
-      this.basicActive = false;
-      this.premiumActive = false;
-      this.superActive = true;
-    },
   },
 };
 </script>

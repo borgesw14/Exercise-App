@@ -1,10 +1,12 @@
 import { createApp } from 'vue'
 import "bulma";
-import "@fortawesome/fontawesome-free";
+import "@fortawesome/fontawesome-free/css/all.css";
 
 import '@/assets/styles/styles.css'
 
 import App from './App.vue'
 import router from './router'
 
-createApp(App).use(router).mount('#app')
+const app = createApp(App)
+app.use(router)
+app.mount('#app')

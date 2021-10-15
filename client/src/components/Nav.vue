@@ -1,6 +1,8 @@
 <template>
   <div id="nav-container" class="container">
-    <nav class="navbar has-shadow is-white px-6 is-fixed-top">
+    <div class="columns">
+      <div class="column">
+        <nav class="navbar has-shadow is-white px-6 is-fixed-top">
       <!-- <nav class="navbar has-shadow is-white px-6"> -->
       <div class="navbar-brand">
         <router-link to="/" class="navbar-item is-size-4">FitLife</router-link>
@@ -27,7 +29,7 @@
             </div>
           </div>
 
-          <a href="/friends" class="navbar-item">Friends</a>
+          <!-- <a href="/friends" class="navbar-item">Friends</a> -->
         </div>
         <div class="navbar-end">
           <div class="navbar-item">
@@ -39,23 +41,34 @@
           </div>
 
           <div class="navbar-item">
-            <span class="icon">
-              <a class="button is-white"><i class="fa fa-facebook"></i></a>
-            </span>
+            
+            <a class="button is-white">
+              <span class="icon">
+                <i class="fab fa-facebook"></i>
+              </span>
+            </a>
+            
           </div>
           <div class="navbar-item">
-            <span class="icon">
-              <a class="button is-white"><i class="fa fa-youtube"></i></a>
-            </span>
+            <a class="button is-white">
+              <span class="icon">
+                <i class="fab fa-youtube"></i>
+              </span>
+            </a>
           </div>
           <div class="navbar-item">
-            <span class="icon">
-              <a class="button is-white"><i class="fa fa-instagram"></i></a>
-            </span>
+            <a class="button is-white">
+              <span class="icon">
+                <i class="fab fa-instagram"></i>
+              </span>
+            </a>
           </div>
         </div>
       </div>
     </nav>
+      </div>
+    </div>
+    
   </div>
 </template>
 
