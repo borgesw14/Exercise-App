@@ -13,7 +13,7 @@ const routes = [
     component: Home
   },
   {
-    path: '/dashboard',
+    path: '/feed',
     name: 'Dashboard',
     component: Dashboard,
     meta: { requiresLogin: true }
@@ -21,12 +21,14 @@ const routes = [
   {
     path: '/workouts_history',
     name: 'Workout History',
-    component: Workouts_History
+    component: Workouts_History,
+    meta: { requiresLogin: true }
   },
   {
     path: '/workouts_new',
     name: 'New Workout',
-    component: Workouts_New
+    component: Workouts_New,
+    meta: { requiresLogin: true }
   },
   {
       path: '/login',
