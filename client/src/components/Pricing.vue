@@ -51,7 +51,7 @@
           </div>
         </div>
       </div>
-      <div :class="{ 'is-hidden': active == 2 }">
+      <div :class="{ 'is-hidden': active != tabIds.PREMIUM }">
         <div class="content">
           <h3 class="title is-size-3">Premium Plan</h3>
           <p>
@@ -73,7 +73,7 @@
           </div>
         </div>
       </div>
-      <div :class="{ 'is-hidden': active == tabIds.SUEPR }">
+      <div :class="{ 'is-hidden': active != tabIds.SUPER }">
         <div class="content">
           <h3 class="title is-size-3">Super Plan</h3>
           <p>
@@ -100,7 +100,7 @@
 </template>
 
 <script>
-const tabIds ={ BASIC : 1, PREMIUM : 2, SUPER : 3} ;
+const tabIds = { BASIC: 1, PREMIUM: 2, SUPER: 3 };
 export default {
   data() {
     return {
@@ -108,7 +108,6 @@ export default {
       active: 1,
     };
   },
-  methods: {
-  },
+  methods: {},
 };
 </script>
