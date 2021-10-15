@@ -1,5 +1,7 @@
 <template>
-  <form class="section" @submit.prevent="login()">
+  <form class="section is-large" @submit.prevent="login()">
+    <p class="title">Login</p>
+
     <div class="field">
       <p class="control has-icons-left has-icons-right">
         <input class="input" type="text" placeholder="Email" v-model="email" />

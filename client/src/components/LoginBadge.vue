@@ -1,6 +1,6 @@
 <template>
   <div class="buttons" v-if="!Session.user">
-    <a class="button is-white">
+    <a class="button is-dark is-rounded">
       <strong>Sign up</strong>
     </a>
     <a class="button is-white" @click="login"> Log in </a>
