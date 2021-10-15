@@ -16,14 +16,20 @@
       </div>
       <div class="navbar-menu" :class="{ 'is-active': showNav }">
         <div class="navbar-start">
-          <router-link to="/dashboard" class="navbar-item">Dashboard</router-link>
+          <router-link to="/dashboard" class="navbar-item"
+            >Dashboard</router-link
+          >
 
           <div class="navbar-item has-dropdown is-hoverable">
             <a href="#" class="navbar-link">Workouts</a>
 
             <div class="navbar-dropdown">
-              <router-link to="/workouts_history" class="navbar-item">History</router-link>
-              <router-link to="/workouts_new" class="navbar-item">New Workout</router-link>
+              <router-link to="/workouts_history" class="navbar-item"
+                >History</router-link
+              >
+              <router-link to="/workouts_new" class="navbar-item"
+                >New Workout</router-link
+              >
             </div>
           </div>
 
@@ -53,6 +59,10 @@
               <a class="button is-white"><i class="fa fa-instagram"></i></a>
             </span>
           </div>
+
+          <div class="navbar-item">
+            <login-badge />
+          </div>
         </div>
       </div>
     </nav>
@@ -60,6 +70,7 @@
 </template>
 
 <script>
+import LoginBadge from "./LoginBadge";
 export default {
   methods: {
     toggleIsActive() {
@@ -70,6 +81,9 @@ export default {
     return {
       showNav: false,
     };
+  },
+  components: {
+    LoginBadge,
   },
 };
 </script>
