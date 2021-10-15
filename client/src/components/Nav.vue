@@ -23,9 +23,7 @@
               placeholder="Search"
             />
           </div>
-          <router-link to="/dashboard" class="navbar-item"
-            >Dashboard</router-link
-          >
+          <router-link to="/feed" class="navbar-item">Feed</router-link>
 
           <div class="navbar-item has-dropdown is-hoverable">
             <a href="#" class="navbar-link">Workouts</a>

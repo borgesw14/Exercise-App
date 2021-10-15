@@ -4,7 +4,7 @@ import { Login } from "./users";
 const session = {
     user: null,
     messages: [],
-    toRoute: '/dashboard',
+    toRoute: '/feed',
     Login(handle, password){
 
         const response = Login(handle, password);
