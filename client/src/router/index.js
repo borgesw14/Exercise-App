@@ -10,7 +10,8 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    meta: { requiresLogin: false }
   },
   {
     path: '/feed',
@@ -44,8 +45,10 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   if(to.meta.requiresLogin && !Session.user){
       next('/login');
+  }else if(!to.meta.requiresLogin && Session.user){
+      next('/feed');
   }else{
-      next();
+    next();
   }
 })
 
