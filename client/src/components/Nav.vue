@@ -73,5 +73,8 @@ export default {
   components: {
     LoginBadge,
   },
+  created() {
+    document.title = "FitLife";
+  },
 };
 </script>
