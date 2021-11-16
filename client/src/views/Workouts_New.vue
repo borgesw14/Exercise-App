@@ -1,22 +1,18 @@
 <template>
   <div>
-      <new-workout-form/>
+    <new-workout-form />
   </div>
 </template>
 
 <script>
-import NewWorkoutForm from '../components/New-Workout-Form.vue'
+import NewWorkoutForm from "../components/New-Workout-Form.vue";
 export default {
-
-    name: 'Workouts_New',
-    components: { 
-      NewWorkoutForm 
-      
-      },
-
-}
+  name: "Workouts_New",
+  components: {
+    NewWorkoutForm,
+  },
+};
 </script>
 
 <style>
-
 </style>

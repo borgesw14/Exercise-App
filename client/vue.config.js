@@ -1,3 +1,12 @@
 module.exports = {
-    outputDir: "../docs"
+    outputDir: "../docs",
+    configureWebpack: {
+        devServer: {
+            proxy: {
+                '/api': {
+                    target: 'http://localhost:3100'
+                }
+            }
+        }
+    }
 }
