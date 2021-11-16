@@ -1,4 +1,5 @@
 
+require('dotenv').config()
 const express = require('express');
 const serveStatic = require('serve-static');
 const mongoose = require('mongoose');
