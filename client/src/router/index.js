@@ -4,6 +4,7 @@ import Dashboard from '../views/Dashboard.vue';
 import Workouts_New from '../views/Workouts_New.vue';
 import Workouts_History from '../views/Workouts_History.vue';
 import Login from '../views/Login.vue'
+import Register from '../views/Register.vue';
 import Session from '../services/session';
 
 const routes = [
@@ -36,6 +37,11 @@ const routes = [
       name: 'Login',
       component: Login
   },
+  {
+    path: '/register',
+    name: 'Register',
+    component: Register
+  }
 ];
 
 const router = createRouter({

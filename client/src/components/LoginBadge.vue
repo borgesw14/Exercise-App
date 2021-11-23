@@ -1,6 +1,6 @@
 <template>
   <div class="buttons" v-if="!Session.user">
-    <a class="button is-dark is-rounded">
+    <a class="button is-dark is-rounded" @click="register">
       <strong>Sign up</strong>
     </a>
     <a class="button is-white" @click="login"> Log in </a>
@@ -21,6 +21,9 @@ export default {
     login() {
       this.$router.push("/login");
       //this.Session.Login();
+    },
+    register() {
+      this.$router.push("/register");
     },
   },
   computed: {
