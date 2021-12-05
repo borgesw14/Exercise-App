@@ -1,51 +1,53 @@
-const { Router } = require("express");
-const Posts = require("../../models/posts");
+const express = require("express");
+const model = require("../../models/posts");
 
-const router = Router();
+const app = express.Router();
 
-//create
-router.post('/', async (req, res) => {
-    const newPost = new Posts(req.body);
-    try {
-        const post = await newPost.save(); //try to save post to database
-        if(!post){
-            throw new Error('Something went wrong posting workout')
-        }
-        res.status(200).json(post);//on success return status 200
-    } catch (error) {
-        res.status(500).json({message: error.message}) //on fail return error message
-    }
-})
+app
+    .get("/", (req, res, next) =>{
+        model   .GetAll()
+                .then( x=> res.send(x) )
+                .catch(next) 
+    })
+    .get("/wall/:handle", (req, res, next) =>{
+        model   .GetWall(req.params.handle)
+                .then( x=> res.send(x) )
+                .catch(next)    
+    })
+    .get("/feed/:handle", (req, res, next) =>{
+        model   .GetFeed(req.params.handle)
+                .then( x=> res.send(x) )
+                .catch(next)    
+    })
+    .get("/search", (req, res, next) =>{
+        model   .Search(req.query.q)
+                .then( x=> res.send(x) )
+                .catch(next)    
+    })
+    .get("/:id", (req, res, next) =>{
+        model   .Get(req.params.id)
+                .then( x=> res.send(x) )
+                .catch(next)    
+    })
+    .post("/", (req, res, next) =>{
+        model   .Add(req.body)
+                .then( x=> res.status(201).send(x) )
+                .catch(next)
+    })
+    .patch("/:id", (req, res, next) =>{
+        model   .Update(req.params.id, req.body)
+                .then( x=> res.send(x) )
+                .catch(next) 
+    })
+    .delete("/:id", (req, res, next) =>{
+        model   .Delete(req.params.id)
+                .then( x=> res.send({ deleted: x }) )
+                .catch(next) 
+    })
 
-//read
-router.get('/', async (req, res) => {
-    try {
-        const posts = await Posts.find()
-        if(!posts){
-            throw new Error('No Items to return or error retrieving them')
-        }
-        const sorted = posts.sort((a, b) => {
-            return new Date(a.date).getTime() - new Date(b.date).getTime()
-        })
-        res.status(200).json(sorted)
-    } catch (error) {
-        res.status(500).json({message: error.message})
-    }
-})
-
-//update
-//unnecessary for now
-
-//delete
-router.delete('/:id', async (req, res) => {
-    const { id } = req.params
-    try {
-        const removed = await Posts.findByIdAndDelete(id)
-        if(!removed) throw Error('Something went wrong ')
-        res.status(200).json(removed)
-    } catch (error) {
-        res.status(500).json({message: error.message})
-    }
-})
-
-module.exports = router
+    .post("/seed", (req, res, next) =>{
+        model   .Seed()
+                .then( x=> res.status(201).send("Created") )
+                .catch(next)
+    })
+module.exports = app;
