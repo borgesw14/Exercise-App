@@ -2,6 +2,8 @@ import { createApp } from 'vue'
 import "bulma";
 import "@fortawesome/fontawesome-free/css/all.css";
 
+import { Autocomplete } from '@oruga-ui/oruga-next'
+import '@oruga-ui/oruga-next/dist/oruga-full.css'
 
 import '@/assets/styles/styles.css'
 
@@ -12,4 +14,5 @@ import router from './router'
 const app = createApp(App)
 //app.use(VueMeta)
 app.use(router)
+app.use(Autocomplete);
 app.mount('#app')

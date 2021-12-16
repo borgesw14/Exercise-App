@@ -42,11 +42,11 @@
         </div>
         <div class="navbar-end">
           <div class="navbar-item is-hidden-touch">
-            <input
-              type="text"
-              class="input is-dark is-rounded"
-              placeholder="Search"
-            />
+            <o-field label="Find a User">
+              <o-autocomplete rounded expanded v-model="name" :data="filteredDataArray" placeholder="e.g. vp" icon="search" clearable @select="option => selected = option">
+                
+              </o-autocomplete>
+            </o-field>
           </div>
           <div class="navbar-item is-hidden-touch">
             <login-badge />
@@ -58,6 +58,7 @@
 </template>
 
 <script>
+import { GetAll } from '../services/users';
 import LoginBadge from "./LoginBadge";
 export default {
   methods: {
@@ -68,6 +69,8 @@ export default {
   data() {
     return {
       showNav: false,
+      data:[],
+      name: '',
     };
   },
   components: {
@@ -76,5 +79,20 @@ export default {
   created() {
     document.title = "FitLife";
   },
+  async mounted() {
+    this.data = GetAll();
+  },
+  computed: {
+      filteredDataArray() {
+        return this.data.filter(option => {
+          return (
+            option
+              .toString()
+              .toLowerCase()
+              .indexOf(this.name.toLowerCase()) >= 0
+          )
+        })
+      }
+    }
 };
 </script>
